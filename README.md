@@ -6,3 +6,12 @@ In Synchronous FIFO, data read and write operations use the same clock frequency
 FIFO can store/write the d_in at every posedge of the clock based on wr_en signal till it is full. The write pointer gets incremented on every data write in FIFO memory.
 
 The data can be taken out or read from FIFO at every posedge of the clock based on the rd_en signal till it is empty. The read pointer gets incremented on every data read from FIFO memory.
+#Empty condition
+
+w_ptr == r_ptr i.e. write and read pointers has the same value. MSB of wr_ptr and rd_ptr also has the same value.
+
+#Full condition
+
+wr_ptr == rd_ptr i.e. write and read pointers has the same value, but the MSB of wr_ptr and rd_ptr differs.
+
+##Verilog code and testbench to verify the module are provided in the repository
